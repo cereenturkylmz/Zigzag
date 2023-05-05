@@ -17,7 +17,15 @@ public class PlayerController : MonoBehaviour
 
     float artisMiktari = 1f;
 
-    [SerializeField] Text scoreText;
+    int bestScore = 0;
+
+    [SerializeField] Text scoreText,bestScoreText;
+
+    private void Start()
+    {
+        bestScore = PlayerPrefs.GetInt("BestScore");
+        bestScoreText.text = "Best:" +bestScore.ToString();
+    }
 
     void Update()
     {
@@ -43,12 +51,22 @@ public class PlayerController : MonoBehaviour
             isDead = true;
             
             Destroy(this.gameObject, 3f);
+            if(bestScore < score)
+            {
+                bestScore = (int)score;
+                PlayerPrefs.SetInt("BestScore", bestScore);
+            }
             
         }
     }
 
     private void FixedUpdate()
     {
+        if(isDead)
+        {
+            return;
+        }
+
         Vector3 hareket = yon * speed * Time.deltaTime;
         speed += Time.deltaTime * hizlanmaZorlugu;
         transform.position += hareket; //hareket değerini sürekli pozisyona ekle
