@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 540687181}
   m_Layer: 0
   m_Name: Zemin
-  m_TagString: Untagged
+  m_TagString: Zemin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -540,6 +540,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1.3
+  groundSpanner: {fileID: 1156979539}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -592,7 +593,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 85.06068
+  field of view: 88.052765
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -618,7 +619,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: -0.16626103, y: 0.8337173, z: -0.37562954, w: -0.3690194}
-  m_LocalPosition: {x: 2.1986945, y: 4.336649, z: 2.583059}
+  m_LocalPosition: {x: 2.2198768, y: 4.127713, z: 2.2848406}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -637,6 +638,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 396a19d32ef514049bd2fb92e648d6ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  target: {fileID: 815039045}
 --- !u!1 &1156979537
 GameObject:
   m_ObjectHideFlags: 0

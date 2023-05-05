@@ -7,6 +7,8 @@ public class PlayerController : MonoBehaviour
     Vector3 yon = Vector3.left;
     [SerializeField] float speed;
 
+    public GroundSpanner groundSpanner;
+
     void Update()
     {
         if(Input.GetMouseButtonDown(0))
@@ -28,6 +30,13 @@ public class PlayerController : MonoBehaviour
         transform.position += hareket; //hareket değerini sürekli pozisyona ekle
     }
 
+    private void OnCollisionExit(Collision collision)
+    {
+        if(collision.gameObject.CompareTag("Zemin"))
+        {
+            groundSpanner.ZeminOlustur();
+        }
+    }
 
 
 
