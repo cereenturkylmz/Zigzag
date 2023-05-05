@@ -15,6 +15,11 @@ public class FollowCamera : MonoBehaviour
 
     private void LateUpdate()
     {
+        if(PlayerController.isDead)
+        {
+            return;
+        }
+
         //kameranın pozisyonunu target pozisyona götür ama distance kadar yani aradaki mesafe kader 
         transform.position = target.transform.position + distance;
     }
