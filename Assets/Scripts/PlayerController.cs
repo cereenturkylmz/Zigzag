@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour
 
     public static bool isDead = false;
 
+    public float hizlanmaZorlugu;
+
     void Update()
     {
         if(isDead)
@@ -42,6 +44,7 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         Vector3 hareket = yon * speed * Time.deltaTime;
+        speed += Time.deltaTime * hizlanmaZorlugu;
         transform.position += hareket; //hareket değerini sürekli pozisyona ekle
     }
 
@@ -67,6 +70,14 @@ public class PlayerController : MonoBehaviour
       
     } 
     
+
+
+
+
+
+
+
+
 
 
 }//class
